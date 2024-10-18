@@ -16,7 +16,7 @@ import org.springframework.web.bind.annotation.RestController;
 import ar.com.peluqueriacanina.model.Turno;
 import ar.com.peluqueriacanina.service.TurnoService;
 
-@RequestMapping
+@RequestMapping  ("/turno")
 @RestController
 public class TurnoController {
 	

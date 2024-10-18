@@ -16,7 +16,7 @@ import org.springframework.web.bind.annotation.RestController;
 import ar.com.peluqueriacanina.model.Mascota;
 import ar.com.peluqueriacanina.service.MascotaService;
 
-@RequestMapping
+@RequestMapping ("/mascota")
 @RestController
 public class MascotaController {
 	
