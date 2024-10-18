@@ -2,8 +2,12 @@ package ar.com.peluqueriacanina.service.imp;
 
 import java.util.List;
 
+
+
+
 import ar.com.peluqueriacanina.generic.CrudGeneric;
 import ar.com.peluqueriacanina.model.Cliente;
+
 
 public class ClienteServiceImp implements CrudGeneric<Cliente>{
 	

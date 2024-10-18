@@ -10,7 +10,7 @@ public class TurnoService {
 	}
 
 	public Boolean delete(Long turnoId) {
-		// TODO Auto-generated method stub
+		
 		return null;
 	}
 	
