@@ -1,7 +1,9 @@
 package ar.com.peluqueriacanina.service;
 
-import ar.com.peluqueriacanina.model.Mascota;
+import org.springframework.stereotype.Service;
 
+import ar.com.peluqueriacanina.model.Mascota;
+@Service
 public class MascotaService {
 
 	public Mascota save(Mascota mascota) {

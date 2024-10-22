@@ -1,11 +1,42 @@
 package ar.com.peluqueriacanina.model;
-import lombok.Data;
+import jakarta.persistence.Entity;
+import jakarta.persistence.GeneratedValue;
+import jakarta.persistence.GenerationType;
+import jakarta.persistence.Id;
 
-@Data
+@Entity
 public class Cliente {
+   @Id
+   @GeneratedValue(strategy = GenerationType.IDENTITY)
+   private int id;
+   private String nombre;
+   private String apellido;
 
-	private int clienteId;
-	private String nombre;
-	private String celular;
-	
+   
+   public Cliente() {}
+
+   
+   public int getId() {
+       return id;
+   }
+
+   public void setId(int id) {
+       this.id = id;
+   }
+
+   public String getNombre() {
+       return nombre;
+   }
+
+   public void setNombre(String nombre) {
+       this.nombre = nombre;
+   }
+
+   public String getApellido() {
+       return apellido;
+   }
+
+   public void setApellido(String apellido) {
+       this.apellido = apellido;
+   }
 }

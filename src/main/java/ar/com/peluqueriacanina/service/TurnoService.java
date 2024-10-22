@@ -1,7 +1,9 @@
 package ar.com.peluqueriacanina.service;
 
-import ar.com.peluqueriacanina.model.Turno;
+import org.springframework.stereotype.Service;
 
+import ar.com.peluqueriacanina.model.Turno;
+@Service
 public class TurnoService {
 
 	public Turno save(Turno turno) {

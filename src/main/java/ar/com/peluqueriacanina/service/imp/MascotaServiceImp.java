@@ -2,16 +2,15 @@ package ar.com.peluqueriacanina.service.imp;
 
 import java.util.List;
 
-
-
+import org.springframework.stereotype.Service;
 
 import ar.com.peluqueriacanina.generic.CrudGeneric;
 import ar.com.peluqueriacanina.model.Mascota;
-
+@Service
 public class MascotaServiceImp implements CrudGeneric<Mascota> {
 	
 	@Override
-	public Mascota findById(Long id) {
+	public Mascota findById(int id) {
 		return null;
 	}
 
@@ -22,7 +21,7 @@ public class MascotaServiceImp implements CrudGeneric<Mascota> {
 	}
 
 	@Override
-	public List<Mascota> findAll(Long id) {
+	public List<Mascota> findAll(int id) {
 		
 		return null;
 	}
@@ -34,7 +33,7 @@ public class MascotaServiceImp implements CrudGeneric<Mascota> {
 	}
 
 	@Override
-	public Boolean delete(Long id) {
+	public Boolean delete(int id) {
 		
 		return null;
 	}

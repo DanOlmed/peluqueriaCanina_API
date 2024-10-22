@@ -2,15 +2,15 @@ package ar.com.peluqueriacanina.service.imp;
 
 import java.util.List;
 
-
+import org.springframework.stereotype.Service;
 
 import ar.com.peluqueriacanina.generic.CrudGeneric;
 import ar.com.peluqueriacanina.model.Turno;
-
+@Service
 public class TurnoServiceImp implements CrudGeneric<Turno> {
 
 	@Override
-	public Turno findById(Long id) {
+	public Turno findById(int id) {
 		
 		return null;
 	}
@@ -22,7 +22,7 @@ public class TurnoServiceImp implements CrudGeneric<Turno> {
 	}
 
 	@Override
-	public List<Turno> findAll(Long id) {
+	public List<Turno> findAll(int id) {
 		
 		return null;
 	}
@@ -34,7 +34,7 @@ public class TurnoServiceImp implements CrudGeneric<Turno> {
 	}
 
 	@Override
-	public Boolean delete(Long id) {
+	public Boolean delete(int id) {
 		
 		return null;
 	}

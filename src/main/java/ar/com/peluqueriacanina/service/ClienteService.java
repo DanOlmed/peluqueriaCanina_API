@@ -1,18 +1,16 @@
 package ar.com.peluqueriacanina.service;
 
+
+import ar.com.peluqueriacanina.generic.*;
+
+
+import org.springframework.stereotype.Service;
+
 import ar.com.peluqueriacanina.model.Cliente;
 
-public class ClienteService {
+@Service
+public interface ClienteService extends CrudGeneric<Cliente> {
 
-	public Cliente save(Cliente cliente) {
-		
-		return null;
-	}
-
-	public Boolean delete(Long clienteId) {
-		
-		return null;
-	}
-
+	
 	
 }
