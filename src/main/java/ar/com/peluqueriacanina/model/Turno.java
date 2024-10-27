@@ -1,6 +1,8 @@
 package ar.com.peluqueriacanina.model;
 import java.util.Date;
 
+import com.fasterxml.jackson.annotation.JsonFormat;
+
 import jakarta.persistence.Entity;
 import jakarta.persistence.GeneratedValue;
 import jakarta.persistence.GenerationType;
@@ -15,6 +17,7 @@ public class Turno {
 	@Id
 	@GeneratedValue(strategy=GenerationType.IDENTITY)
 	private int turnoId;
+	@JsonFormat(shape = JsonFormat.Shape.STRING, pattern = "dd-MM-yyyy")
 	private Date dia;
 	private String hora;
 	@ManyToOne

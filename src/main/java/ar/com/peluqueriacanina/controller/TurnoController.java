@@ -1,6 +1,7 @@
 package ar.com.peluqueriacanina.controller;
 
 import java.util.HashMap;
+
 import java.util.List;
 import java.util.Map;
 
@@ -18,7 +19,9 @@ import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.RestController;
 
 
+import ar.com.peluqueriacanina.model.Mascota;
 import ar.com.peluqueriacanina.model.Turno;
+import ar.com.peluqueriacanina.service.MascotaService;
 import ar.com.peluqueriacanina.service.TurnoService;
 
 @RequestMapping  ("/turno")
@@ -27,21 +30,22 @@ public class TurnoController {
 	
 	@Autowired
 	private TurnoService turnoService;
+	@Autowired
+	private MascotaService mascotaService;
 	
 	@PostMapping
-	public ResponseEntity<?> addUser(@RequestBody Turno turno){
-		Map<String, Object> response = new HashMap<String, Object>(); 
-		try {
-			Turno sTurno = turnoService.save(turno);
-			response.put("data", sTurno);
-			response.put("msj","ok");
-			
-		}catch(Exception e) {
-			response.put("error", e.toString());
-			return new ResponseEntity<Map<String,Object>>(response, HttpStatus.INTERNAL_SERVER_ERROR);
-		}
-		return new ResponseEntity<Map<String, Object>>(response, HttpStatus.OK);
-		
+	public ResponseEntity<Turno> addTurno(@RequestBody Turno turno){
+		 try {
+	            Mascota mascota = mascotaService.findById(turno.getMascota().getMascotaId());
+	            if (mascota == null) {
+	                return new ResponseEntity<>(HttpStatus.NOT_FOUND);
+	            }
+	            turno.setMascota(mascota);
+	            Turno nuevoTurno = turnoService.save(turno);
+	            return new ResponseEntity<>(nuevoTurno, HttpStatus.CREATED);
+	        } catch (Exception e) {
+	            return new ResponseEntity<>(HttpStatus.INTERNAL_SERVER_ERROR);
+	        }
 	}
 	
 	@DeleteMapping
